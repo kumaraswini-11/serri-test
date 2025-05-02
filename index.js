@@ -3,6 +3,7 @@ const fs = require("fs");
 const csv = require("csv-parser");
 const fastcsv = require("fast-csv");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 
 const app = express();
 const PORT = 3000;
