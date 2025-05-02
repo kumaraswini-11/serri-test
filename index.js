@@ -4,6 +4,7 @@ const csv = require("csv-parser");
 const fastcsv = require("fast-csv");
 const bodyParser = require("body-parser");
 require("dotenv").config();
+const serverless = require("serverless-http");
 
 const app = express();
 const PORT = 3000;
@@ -79,3 +80,5 @@ app.delete("/users/:id", (req, res) => {
 app.listen(PORT, () =>
   console.log(`Server running on ${process.env.APP_URL}:${PORT}`)
 );
+
+module.exports.handler = serverless(app);
